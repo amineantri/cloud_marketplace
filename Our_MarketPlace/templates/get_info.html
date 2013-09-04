@@ -1,0 +1,26 @@
+{% extends "base/page.html" %}
+{% block main %}
+		<div class="page-header">
+  			<h5>{{ Company_name }} Profil.</h5>
+  		</div>
+			<div class="row">
+			<div class="span3 columns">
+				<h4>{{ Company_name }} Account</h4> <hr />
+					<p>Get all information about {{ Company_name }}.</p></a>
+					<br />
+				<h4>My Servers</h4> <hr/>
+					<a href="{% url company_servers user_id %}"><p>Display {{ Company_name }} servers.</p></a>										
+			</div>
+			
+				<div class="span14">
+  							<h4>Get started </h4>
+  							<hr />
+             				<p>Welcome to {{ Company_name }} account for Cloud Hosting Companies.</p>             				
+ 					  					  
+  				</div>
+  			</div>
+
+{% endblock %}
+  
+  
+  

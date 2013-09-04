@@ -1,0 +1,32 @@
+{% extends "base/page.html" %}
+{% block main %}
+      <div class="row">
+        <div class="span6 columns">
+        </div>
+      </div>
+      <div class="page-header">
+        <h1>Sign In</h1>
+      </div>
+      <div class="row">
+        <div class="span6 columns">
+          <form accept-charset="UTF-8" action="{% url login %}" class="form-stacked" method="post">{% csrf_token %}
+          {% if form.is_bound and not form.is_valid %}
+            <div class="alert-message block-message error">
+              <div class="errors">
+                {% for field in form.visible_fields %}
+                  {% for error in field.errors %}
+                  <p>{{ field.label }}: {{ error }}</p>
+                  {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                  <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          {% for field in form %}{% include "base/field.html" %}{% endfor %}
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn primary" name="commit" type="submit" value="Sign in"></p>
+          </form>
+        </div>
+      </div>  
+{% endblock %}

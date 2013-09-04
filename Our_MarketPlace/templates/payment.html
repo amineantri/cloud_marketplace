@@ -1,0 +1,79 @@
+{% extends "base/page.html" %}
+{% load url from future %}
+
+    {% block extra_head %}<script type="application/javascript">
+	Filter = {}
+	$(function(){
+		Filter.continent = $('#combo1')
+		Filter.country = $('#combo2')
+		Filter.city = $('#combo3')
+		Filter.street = $('#combo4')
+		//...
+		Filter.continent.bind('change', function(e){
+		  var v = Filter.continent.val()
+		  console.log(v)
+		  if(v !== "0")
+		    Filter.country.removeAttr("disabled")
+		  else
+		    Filter.country.attr("disabled", "disabled")
+		    Filter.city.attr("disabled", "disabled")		    
+		    Filter.street.attr("disabled", "disabled")
+		    
+		 
+	
+		})
+		Filter.country.bind('change', function(e){
+		  var v = Filter.country.val()
+		  console.log(v)
+		  if(v !== "0")
+		    Filter.city.removeAttr("disabled")
+		  else
+		    Filter.city.attr("disabled", "disabled")
+		    Filter.street.attr("disabled", "disabled")
+		    
+		    
+		    
+		    })
+		Filter.city.bind('change', function(e){
+		  var v = Filter.city.val()
+		  console.log(v)
+		  if(v !== "0")
+		    Filter.street.removeAttr("disabled")
+		  else
+		    Filter.street.attr("disabled", "disabled")
+		})
+	})
+	</script>{% endblock %}
+
+{% block main %}
+ 
+
+				<div class="span10">  
+      <div class="page-header">
+        <h3>Complete this form to pay the amount to the providers</h3>
+      </div>
+      <div class="row">
+        <div class="span6 columns">
+        <form accept-charset="UTF-8" action="" class="form-stacked" method="post">{% csrf_token %}
+          {% if form.is_bound and not form.is_valid %}
+            <div class="alert-message block-message error">
+              <div class="errors">
+                {% for field in form.visible_fields %}
+                  {% for error in field.errors %}
+                  <p>{{ field.label }}: {{ error }}</p>
+                  {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                  <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          {% for field in form %}{% include "base/field.html" %}{% endfor %}
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn primary" name="commit" type="submit" value="Pay Up"></p>
+          </form>
+        </div>
+      </div>  
+     
+      
+{% endblock %}

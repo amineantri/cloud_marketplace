@@ -1,0 +1,655 @@
+
+    
+    <div id="sandbar">
+      
+      
+
+
+
+
+<header id="gc-googlebar">
+
+  <a id="gc-logo" href="/">
+    <img src="/_static/images/developers-logo.svg" alt="Google">
+  </a>
+<script>
+if (!Modernizr || !Modernizr.svg) {
+  $('#gc-logo img').attr({src:'/_static/images/developers-logo.png'});
+}
+</script>
+
+  <div class="gc-social">
+    
+    <span class="signed-in">
+      <div>
+        <a class="email" href="https://plus.google.com/me">amine.antri@gmail.com</a>
+        <a href="https://www.google.com/accounts/Logout?continue=https://developers.google.com/speed/pagespeed/module/filters&amp;service=ahsid">Sign out</a>
+      </div>
+      <img src="/_static/images/silhouette36.png?sz=30">
+    </span>
+    
+  </div>
+
+  <form class="gc-search" action="/search/results" method="GET">
+    <div style="width: 409px;" class="searchbox">
+      
+      
+        <span class="button button-blue mini">Make the Web Faster<pre>  X</pre></span>
+      
+      <input style="width: 263px;" name="q" class="q" id="q" value="" placeholder="Search" autocomplete="off" type="text">
+    </div>
+    <button style="top: 0px; left: 428px;" class="button button-blue">
+      <img src="/_static/images/search.png" alt="Search">
+    </button>
+    
+      <input name="p" id="search_project" value="/speed" type="hidden">
+    
+  </form>
+
+</header>
+
+
+<script>
+  (function() { var a=window.devsite||{};window.devsite=a;var _gaq=_gaq||[];WebFontConfig={google:{families:["Open+Sans"]}};a.location=window.location;a.reloadWindow=function(){a.location.reload()};a.openWindow=window.open;a.devsite=a.devsite||{};a.devsite.dialogConfig={autoOpen:!1,modal:!0,show:"fade",dialogClass:"msgDialog",closeText:"",resizable:!1,draggable:!1,zIndex:9999};a.KD_FADE_LONG=218;a.KD_FADE_SHORT=130;a.progress=a.progress||{};a.progress.INTERVAL_TIME_MS=460;a.progress.MAX_LOOP=100;a.progress.RIGHT_MARGIN=6;a.progress.TOP_MARGIN=-15;
+a.progress.kennedyProgressDot=function(d){a.progress.circleInnerHtml='<span class="mask first"><span class="base"></span><span class="mover"></span></span><span class="mask second"><span class="base"></span><span class="mover"></span></span>';a.progress.spinnerHtml='<div class="circle initial"><span class="mask"><span class="mover"></span></span></div><div class="circle red"></div><div class="circle yellow"></div><div class="circle green"></div><div class="circle blue"></div>';var c=$("<div></div>").prop("id",
+"loader").prop("class","yellow").html(a.progress.spinnerHtml);c.find(".red").html(a.progress.circleInnerHtml);c.find(".blue").html(a.progress.circleInnerHtml);c.find(".green").html(a.progress.circleInnerHtml);c.find(".yellow").html(a.progress.circleInnerHtml);c.css({position:"absolute",right:a.progress.RIGHT_MARGIN+"px",top:a.progress.TOP_MARGIN+"px"});d.append(c);d=function(){this.colorIndex=-1;this.colors=["red","yellow","green","blue"];this.loader=c;this.loopCount=0;this.shouldStop=!1};d.prototype.start=
+function(){var b=this;this.loader.removeClass();this.loader.addClass("firstTime");this.interval=setInterval(function(){b.loop()},a.progress.INTERVAL_TIME_MS)};d.prototype.loop=function(){this.loopCount+=1;this.loader.hasClass("firstTime")?(this.loader.removeClass("firstTime"),this.loader.addClass("initial")):this.loader.hasClass("stopped")?(this.loader.removeClass("stopped"),this.loader.addClass("finishing")):this.loader.hasClass("finishing")?(clearInterval(this.interval),c.remove()):(this.colorIndex=
+(this.colorIndex+1)%this.colors.length,this.loader.removeClass(),this.loader.addClass(this.colors[this.colorIndex]),(this.shouldStop||this.loopCount>a.progress.MAX_LOOP)&&this.loader.addClass("stopped"))};d.prototype.stop=function(){this.shouldStop=!0};var f=new d;return d={start:function(){$.fx.off||f.start()},clear:function(){c.remove()},error:function(){f.stop()}}};a.progress=a.progress||{};
+a.progress.progressDot=function(d){function c(){e+=1;100>e&&b.animate({opacity:"toggle"},a.KD_FADE_LONG,c)}var f=6,b=d.parent().find(".progress");b.remove();b=$("<div></div>").addClass("progress");b.css({position:"absolute","border-radius":f+"px",border:f+"px solid #3D9400",right:f+"px",top:d.parent().height()/2-f+"px",width:0,height:0});d.parent().append(b);var e=0;return d={start:function(){$.fx.off||c()},clear:function(){b.remove()},error:function(){b.stop();b.css({opacity:1,border:f+"px solid #DD4B39"})}}};a.location=window.location;a.setTimeout=function(){return window.setTimeout.apply(window,arguments)};a.clearTimeout=function(){window.clearTimeout.apply(window,arguments)};a.localInit=function(){a.search.init()};a.search={KEY_ESC:27,fadeTime:a.KD_FADE_SHORT,keyDelay:300};
+a.search.init=function(){window.devsite.search.initResultHandlers();var d=$(".gc-search");d.submit(function(){if(window.devsite.geo){var b=window.devsite.geo.lat+","+window.devsite.geo.lon,b=$('<input type="hidden" name="l"/>').val(b);d.append(b)}});var c=$("#q");c.unbind("keyup click");c.bind("keyup click",function(b){a.search.timeout&&a.clearTimeout(a.search.timeout);$(this).val()&&b.keyCode!=a.search.KEY_ESC?a.search.timeout=a.setTimeout(function(){a.search.updateResults()},a.search.keyDelay):
+a.search.removeAutocomplete()});var c=$(".searchbox").children(".button"),f=$("#restrict input");(f.is(":checked")||0==f.length&&0!=c.length)&&a.search.grow();$("body").delegate("#restrict input","click",function(){$(this).is(":checked")?a.search.grow($("#restrict input").val()):a.search.shrink();a.search.updateResults();$("#q").focus()})};
+a.search.initResultHandlers=function(){$(".search-results .result").unbind("click");$(".search-results .result").click(function(){var d={type:$(this).data("type"),url:$(this).data("url"),hl:$(this).data("hl"),q:$(this).data("q")};$.post("/search/go",d,function(c){c&&(a.location.href=c)});return!1})};a.search.fadeOutIfExists=function(d,c,f){d&&d.length?d.fadeOut(c,f):f()};a.search.removeAutocomplete=function(){var d=$(".search-autocomplete");d.remove();a.search.lastQ=null};
+a.search.grow=function(d){var c=$("#q"),f=$(".searchbox"),b=$(".gc-search").children("button"),e=f.children(".button");if(d){var e=c.val(),g=$(".results").data("query-match");g&&c.val(e.substr(g.length+1));e=$("<span></span>");e.addClass("button button-blue mini");e.text($("#restrict").find("span").text());e.data("query-match",g);f.prepend(e);g=$("<input />");g.attr({id:"search_project",type:"hidden",name:"p",value:d});$(".gc-search").append(g)}e.append($("<pre>  X</pre>"));g=$(".searchbox").width();
+d=e.outerWidth(!0);var k=f.outerWidth(!0)+d;f.css("width",k+"px");c.css("width",g+"px");c=b.offset();c.left+=d+10;b.offset(c);b=function(){a.search.shrink();$("#q").focus()};e.click(b)};
+a.search.shrink=function(){var d=$("#q"),c=$(".searchbox"),f=c.children("input"),b=c.children(".button"),e=b.data("query-match");e&&f.val($.trim(e)+" "+f.val());f=$(".gc-search").children("button");$("#restrict input").prop("checked",!1);$("#search_project").remove();e=b.outerWidth(!0);b.remove();b=f.offset();b.left-=e+10;c.css("width","");d.css("width","100%");f.offset(b)};
+a.search.updateResults=function(){var d=$(".searchbox"),c=$("#q"),f=$("#search_project"),b={q:$.trim(c.val()||"")};window.devsite.geo&&(b.l=window.devsite.geo.lat+","+window.devsite.geo.lon);f&&f.val()&&(b.p=escape(f.val()));if(!a.search.lastQ||a.search.lastQ.q!=b.q||a.search.lastQ.p!=b.p){a.search.lastQ=b;a.search.xhr&&a.search.xhr.abort();var e=$(".search-results");b.n=e.data("n")||4;var g=a.progress.kennedyProgressDot(d);g.start();a.search.xhr=$.get("/search/results",b,function(f){g.clear();f&&
+($("#what-q").text(b.q),e=$(".search-results"),a.search.fadeOutIfExists(e,a.search.fadeTime,function(){e.empty();if($.trim(f).length){if(!e.length){e=$("<div></div>").addClass("search-results search-autocomplete").data("n",4);$("body").append(e);var g=d.offset();e.css({position:"absolute",top:g.top+d.outerHeight()+3,left:g.left})}e.append(f);var g=$("#search-next"),h=e.children(".results").data("c");g.length?h?(g.attr("href","/search/results?c="+encodeURIComponent(h)+"&q="+encodeURIComponent(b.q)),
+g.show()):g.hide():$("#search-full").show();$("body").bind("click.searchAutocomplete",function(b){$.contains(e.get(0),b.target)||(e.is(b.target)||c.is(b.target))||!e.hasClass("search-autocomplete")||(a.search.removeAutocomplete(),$(this).unbind("click.searchAutocomplete"))});a.search.initResultHandlers();e.fadeIn(a.search.fadeTime)}}))});a.search.xhr.error(function(){g.error()})}};
+ })();
+
+  if (window.jQuery) {
+    $(document).ready(function() {
+      window.devsite.search.init();
+
+      var loginLink = $('#loginLink');
+      if (loginLink.length > 0) {
+        loginLink.click(devsite.devsite.login);
+      }
+    });
+  }
+</script>
+
+      
+    </div>
+    
+
+    
+    
+
+    <div id="gc-wrapper" itemscope="" itemtype="http://schema.org/Article">
+      
+      <input id="gc-analytics" value="UA-24532603-1" type="hidden">
+      
+
+      
+
+      <div id="gc-topnav">
+        <div>
+
+          
+          
+
+          <ul>
+
+            
+            
+
+            
+            
+            
+            
+            <li class=""><a href="/">Home</a></li>
+            
+            <li class="active"><a href="/products/">Products</a></li>
+            
+            <li class=""><a href="/events/">Conferences</a></li>
+            
+            <li class=""><a href="/showcase/">Showcase</a></li>
+            
+            <li class=""><a href="/live/">Live</a></li>
+            
+            <li class=""><a href="/groups/">Groups</a></li>
+            
+
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+
+      
+      
+      
+        <div id="gc-appbar">
+          
+          
+<h1>
+
+  <a href="/speed/pagespeed/mod">PageSpeed Module</a>
+
+  
+  
+  <div class="plusone-container">
+    <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" allowtransparency="true" src="https://apis.google.com/_/+1/fastbutton?bsv&amp;source=google%3Adevelopers&amp;size=medium&amp;hl=en&amp;origin=https%3A%2F%2Fdevelopers.google.com&amp;url=https%3A%2F%2Fdevelopers.google.com%2Fspeed%2Fpagespeed%2Fmodule%2Ffilters&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.fr.7XVskWpYQiM.O%2Fm%3D__features__%2Fam%3DEQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAItRSTMdp1372Xr_bVB3hJIUaTycyd0oZQ#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Conload&amp;id=I0_1373460915066&amp;parent=https%3A%2F%2Fdevelopers.google.com&amp;pfname=&amp;rpctoken=10220978" name="I0_1373460915066" id="I0_1373460915066" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" scrolling="no" width="100%" frameborder="0"></iframe></div>
+  </div>
+  
+
+
+
+
+
+
+</h1>
+
+
+          
+        </div>
+      
+      
+
+      
+        
+      <div id="gc-main" class="main">
+        
+        
+  
+  
+      
+      
+      <div id="gc-sidebar">
+        
+
+  
+
+
+
+  <nav class="gc-toc"><ul><li class=""><a href="/speed/" data-title="Overview"><span>Overview</span></a></li><li class=""><a class="tlw-control tlw-expanded">▾</a><a class="tlw-title" href="/speed/pagespeed/" data-title="PageSpeed"><span>PageSpeed</span></a><ul><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Analysis">Analysis</span><ul style="display: none;"><li class=""><a href="/speed/pagespeed/insights" data-title="Insights"><span>Insights</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/pagespeed/insights_extensions" data-title="Insights Extensions"><span>Insights Extensions</span></a><ul style="display: none;"><li class=""><a href="/speed/docs/insights/using_chrome" data-title="Chrome"><span>Chrome</span></a></li><li class=""><a href="/speed/docs/insights/using_firefox" data-title="Firefox"><span>Firefox</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/docs/insights/v1/getting_started" data-title="Insights API"><span>Insights API</span></a><ul style="display: none;"><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Documentation">Documentation</span><ul style="display: none;"><li class=""><a href="/speed/docs/insights/v1/getting_started" data-title="Getting Started"><span>Getting Started</span></a></li><li class=""><a href="/speed/docs/insights/v1/performance" data-title="Performance Tips"><span>Performance Tips</span></a></li><li class=""><a href="/speed/docs/insights/v1/reference" data-title="Reference"><span>Reference</span></a></li><li class=""><a href="/speed/docs/insights/release_notes" data-title="Release Notes"><span>Release Notes</span></a></li><li class=""><a href="/speed/docs/insights/terms" data-title="Terms of Service"><span>Terms of Service</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Resources">Resources</span><ul style="display: none;"><li class=""><a href="/speed/docs/insights/libraries" data-title="Libraries and Samples"><span>Libraries and Samples</span></a></li><li class=""><a href="http://code.google.com/apis/console" data-title="APIs Console"><span>APIs Console</span></a></li></ul></li><li class=""><a href="/speed/docs/insights/libraries" data-title="Libraries"><span>Libraries</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/docs/insights/rules" data-title="Rules"><span>Rules</span></a><ul style="display: none;"><li class=""><a href="/speed/docs/best-practices/rtt#AvoidBadRequests" data-title="Avoid Bad Requests"><span>Avoid Bad Requests</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#AvoidCssImport" data-title="Avoid CSS @import"><span>Avoid CSS @import</span></a></li><li class=""><a href="/speed/docs/best-practices/rendering#AvoidCSSExpressions" data-title="Avoid CSS Expressions"><span>Avoid CSS Expressions</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#AvoidDocumentWrite" data-title="Minimize document.write"><span>Minimize document.write</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#CombineExternalCSS" data-title="Combine External CSS"><span>Combine External CSS</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#CombineExternalJS" data-title="Combine External JavaScript"><span>Combine External JavaScript</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#SpriteImages" data-title="Combine Image Using CSS Sprite"><span>Combine Image Using CSS Sprite</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#DeferLoadingJS" data-title="Defer Loading of JavaScript"><span>Defer Loading of JavaScript</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#DeferParsingJS" data-title="Defer Parsing of JavaScript"><span>Defer Parsing of JavaScript</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#GzipCompression" data-title="Enable Compression"><span>Enable Compression</span></a></li><li class=""><a href="/speed/docs/best-practices/caching#LeverageBrowserCaching" data-title="Leverage Browser Caching"><span>Leverage Browser Caching</span></a></li><li class=""><a href="/speed/docs/best-practices/caching#LeverageProxyCaching" data-title="Leverage Proxy Caching"><span>Leverage Proxy Caching</span></a></li><li class=""><a href="/speed/docs/best-practices/mobile#CacheLandingPageRedirects" data-title="Make Landing Page Redirects Cacheable"><span>Make Landing Page Redirects Cacheable</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#MinifyCSS" data-title="Minify CSS"><span>Minify CSS</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#MinifyHTML" data-title="Minify HTML"><span>Minify HTML</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#MinifyJS" data-title="Minigy JavaScript"><span>Minigy JavaScript</span></a></li><li class=""><a href="/speed/docs/best-practices/request#MinimizeRequestSize" data-title="Minimize Request Size"><span>Minimize Request Size</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#MinimizeDNSLookups" data-title="Minimize DNS Lookups"><span>Minimize DNS Lookups</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#AvoidRedirects" data-title="Minimize Redirects"><span>Minimize Redirects</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#CompressImages" data-title="Optimize Images"><span>Optimize Images</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#PutStylesBeforeScripts" data-title="Optimize the Order of Styles and Scripts"><span>Optimize the Order of Styles and Scripts</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#ParallelizeDownloads" data-title="Parallelize Downloads Across Hostnames"><span>Parallelize Downloads Across Hostnames</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt#PreferAsyncResource" data-title="Prefer Asynchronous Resources"><span>Prefer Asynchronous Resources</span></a></li><li class=""><a href="/speed/docs/best-practices/rendering#PutCSSInHead" data-title="Put CSS in the Document Head"><span>Put CSS in the Document Head</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#RemoveUnusedCSS" data-title="Remove Unused CSS"><span>Remove Unused CSS</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#duplicate_resources" data-title="Serve Resources from a Consistent URL"><span>Serve Resources from a Consistent URL</span></a></li><li class=""><a href="/speed/docs/best-practices/payload#ScaleImages" data-title="Serve Scaled Images"><span>Serve Scaled Images</span></a></li><li class=""><a href="/speed/docs/best-practices/request#ServeFromCookielessDomain" data-title="Serve Static Content from a Cookieless Domain"><span>Serve Static Content from a Cookieless Domain</span></a></li><li class=""><a href="/speed/docs/best-practices/rendering#SpecifyCharsetEarly" data-title="Specify a Character Set"><span>Specify a Character Set</span></a></li><li class=""><a href="/speed/docs/best-practices/rendering#SpecifyImageDimensions" data-title="Specify Image Dimensions"><span>Specify Image Dimensions</span></a></li><li class=""><a href="/speed/docs/best-practices/rendering#UseEfficientCSSSelectors" data-title="Use Efficient CSS Selectors"><span>Use Efficient CSS Selectors</span></a></li></ul></li><li class=""><a href="/speed/docs/insights/faq" data-title="FAQ"><span>FAQ</span></a></li></ul></li><li class=""><a class="tlw-control tlw-expanded">▾</a><a class="tlw-title" href="/speed/pagespeed/optimization" data-title="Optimization"><span>Optimization</span></a><ul><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/pagespeed/service" data-title="Service"><span>Service</span></a><ul style="display: none;"><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Get Started">Get Started</span><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/tryit" data-title="Measure Speedup"><span>Measure Speedup</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/pagespeed/service/setup" data-title="Setup Guide"><span>Setup Guide</span></a><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/SSLSetup" data-title="SSL Setup Guide"><span>SSL Setup Guide</span></a></li><li class=""><a href="/speed/pagespeed/service/SetupOriginHostInstructions" data-title="Origin Host Setup"><span>Origin Host Setup</span></a></li><li class=""><a href="/speed/pagespeed/service/SetupServingDomainInstructions" data-title="Serving Domain Setup"><span>Serving Domain Setup</span></a></li></ul></li><li class=""><a href="/speed/pagespeed/service/operating" data-title="Operating Your Site"><span>Operating Your Site</span></a></li><li class=""><a href="/speed/pagespeed/service/settings" data-title="Configure Rewriters"><span>Configure Rewriters</span></a></li><li class=""><a href="/speed/pagespeed/service/bandwidth" data-title="Bandwidth"><span>Bandwidth</span></a></li><li class=""><a href="/speed/pagespeed/service/errors" data-title="Caching and Errors"><span>Caching and Errors</span></a></li><li class=""><a href="/speed/pagespeed/service/TerminateAtProxy" data-title="Block Requests"><span>Block Requests</span></a></li><li class=""><a href="/speed/pagespeed/service/log" data-title="Audit Log"><span>Audit Log</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/pagespeed/service/resources" data-title="Resources"><span>Resources</span></a><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/videos" data-title="How-to Videos"><span>How-to Videos</span></a></li><li class=""><a href="/speed/pagespeed/service/faq" data-title="FAQ"><span>FAQ</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/pagespeed/service/rewriters" data-title="Rewriter Documentation"><span>Rewriter Documentation</span></a><ul style="display: none;"><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="HTML">HTML</span><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/InlineSmallResources" data-title="Inline Small Resources"><span>Inline Small Resources</span></a></li><li class=""><a href="/speed/pagespeed/service/OptimizeHtml" data-title="Optimize HTML"><span>Optimize HTML</span></a></li><li class=""><a href="/speed/pagespeed/service/ProxyResources" data-title="Proxy Resources"><span>Proxy Resources</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="CSS">CSS</span><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/CombineCSS" data-title="Combine CSS"><span>Combine CSS</span></a></li><li class=""><a href="/speed/pagespeed/service/FlattenCssImports" data-title="Flatten CSS Imports"><span>Flatten CSS Imports</span></a></li><li class=""><a href="/speed/pagespeed/service/MinifyCSS" data-title="Minify CSS"><span>Minify CSS</span></a></li><li class=""><a href="/speed/pagespeed/service/MoveCSSToHead" data-title="Move CSS to Head"><span>Move CSS to Head</span></a></li><li class=""><a href="/speed/pagespeed/service/PrioritizeCriticalCss" data-title="Prioritize Critical CSS"><span>Prioritize Critical CSS</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Images">Images</span><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/LazyloadImages" data-title="Lazyload Images"><span>Lazyload Images</span></a></li><li class=""><a href="/speed/pagespeed/service/OptimizeImages" data-title="Minify Images"><span>Minify Images</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="JavaScript">JavaScript</span><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/CombineJavaScript" data-title="Combine JavaScript"><span>Combine JavaScript</span></a></li><li class=""><a href="/speed/pagespeed/service/DeferJavaScript" data-title="Defer JavaScript"><span>Defer JavaScript</span></a></li><li class=""><a href="/speed/pagespeed/service/OptimizeJavaScript" data-title="Minify JavaScript"><span>Minify JavaScript</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Prioritize Content">Prioritize Content</span><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/PrioritizeAboveTheFold" data-title="Cache and prioritize visible content"><span>Cache and prioritize visible content</span></a></li><li class=""><a href="/speed/pagespeed/service/FlushResourcesEarly" data-title="Flush Resources Early"><span>Flush Resources Early</span></a></li><li class=""><a href="/speed/pagespeed/service/PreResolveDns" data-title="Pre-resolve DNS"><span>Pre-resolve DNS</span></a></li><li class=""><a href="/speed/pagespeed/service/PrioritizeVisibleContent" data-title="Prioritize visible content"><span>Prioritize visible content</span></a></li><li class=""><a href="/speed/pagespeed/service/CacheHtml" data-title="Cache HTML"><span>Cache HTML</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Others">Others</span><ul style="display: none;"><li class=""><a href="/speed/pagespeed/service/AddEtags" data-title="Add ETags"><span>Add ETags</span></a></li><li class=""><a href="/speed/pagespeed/service/LatencyMeasure" data-title="Measure Page Load Time"><span>Measure Page Load Time</span></a></li><li class=""><a href="/speed/pagespeed/service/ShardResources" data-title="Shard Domains"><span>Shard Domains</span></a></li><li class=""><a href="/speed/pagespeed/service/MiscFeatures" data-title="Miscellaneous Features"><span>Miscellaneous Features</span></a></li></ul></li></ul></li><li class=""><a href="/speed/pagespeed/service/releasenotes" data-title="Release Notes"><span>Release Notes</span></a></li><li class=""><a href="/speed/pagespeed/service/terms" data-title="Terms of Service"><span>Terms of Service</span></a></li></ul></li><li class=""><a href="/speed/pagespeed/service/pricing" data-title="Pricing"><span>Pricing</span></a></li><li class=""><a href="/speed/pagespeed/service/gallery" data-title="Customer Gallery"><span>Customer Gallery</span></a></li></ul></li><li class=""><a class="tlw-control tlw-expanded">▾</a><a class="tlw-title" href="/speed/pagespeed/module" data-title="Module"><span>Module</span></a><ul><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/pagespeed/module/using" data-title="Get Started"><span>Get Started</span></a><ul style="display: none;"><li class=""><a href="/speed/pagespeed/module/download" data-title="Installing From Packages"><span>Installing From Packages</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/pagespeed/module/build_from_source" data-title="Installing From Source"><span>Installing From Source</span></a><ul style="display: none;"><li class=""><a href="/speed/pagespeed/module/build_mod_pagespeed_from_source" data-title="Apache"><span>Apache</span></a></li><li class=""><a href="/speed/pagespeed/module/build_ngx_pagespeed_from_source" data-title="Nginx"><span>Nginx</span></a></li></ul></li><li class=""><a href="/speed/pagespeed/module/configuration" data-title="Module Configuration"><span>Module Configuration</span></a></li><li class=""><a href="/speed/pagespeed/module/config_filters" data-title="Configuring Filters"><span>Configuring Filters</span></a></li><li class=""><a href="/speed/pagespeed/module/domains" data-title="Mapping Domains"><span>Mapping Domains</span></a></li><li class=""><a href="/speed/pagespeed/module/restricting_urls" data-title="URL Control"><span>URL Control</span></a></li><li class=""><a href="/speed/pagespeed/module/https_support" data-title="HTTPS Support"><span>HTTPS Support</span></a></li><li class=""><a href="/speed/pagespeed/module/system" data-title="System Integration"><span>System Integration</span></a></li><li class=""><a href="/speed/pagespeed/module/experiment" data-title="Experimenting with PageSpeed"><span>Experimenting with PageSpeed</span></a></li><li class=""><a href="/speed/pagespeed/module/mod_security" data-title="Security Considerations"><span>Security Considerations</span></a></li><li class=""><a href="/speed/pagespeed/module/release_notes" data-title="Release Notes"><span>Release Notes</span></a></li><li class=""><a href="/speed/pagespeed/module/faq" data-title="Frequently Asked Questions"><span>Frequently Asked Questions</span></a></li></ul></li><li class="active"><a class="tlw-control tlw-expanded">▾</a><a class="tlw-title" href="/speed/pagespeed/module/filters" data-title="Filter Documentation"><span>Filter Documentation</span></a><ul><li class=""><a href="/speed/pagespeed/module/filter-head-add" data-title="Add Head"><span>Add Head</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-instrumentation-add" data-title="Add Instrumentation"><span>Add Instrumentation</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-make-google-analytics-async" data-title="Async Google Analytics"><span>Async Google Analytics</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-canonicalize-js" data-title="Canonicalize JavaScript Libraries"><span>Canonicalize JavaScript Libraries</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-whitespace-collapse" data-title="Collapse Whitespace"><span>Collapse Whitespace</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-css-combine" data-title="Combine CSS"><span>Combine CSS</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-js-combine" data-title="Combine JavaScript"><span>Combine JavaScript</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-head-combine" data-title="Combine Heads"><span>Combine Heads</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-convert-meta-tags" data-title="Convert Meta Tags"><span>Convert Meta Tags</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-js-defer" data-title="Defer JavaScript"><span>Defer JavaScript</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-attribute-elide" data-title="Elide Attributes"><span>Elide Attributes</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-cache-extend" data-title="Extend Cache"><span>Extend Cache</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-cache-extend-pdfs" data-title="Extend Cache PDFs"><span>Extend Cache PDFs</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-flatten-css-imports" data-title="Flatten CSS @imports"><span>Flatten CSS @imports</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-css-inline-import" data-title="Inline @import to Link"><span>Inline @import to Link</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-css-inline" data-title="Inline CSS"><span>Inline CSS</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-js-inline" data-title="Inline JavaScript"><span>Inline JavaScript</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-inline-preview-images" data-title="Inline Preview Images"><span>Inline Preview Images</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-insert-ga" data-title="Insert Google Analytics"><span>Insert Google Analytics</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-lazyload-images" data-title="Lazily Load Images"><span>Lazily Load Images</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-local-storage-cache" data-title="Local Storage Cache"><span>Local Storage Cache</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-js-minify" data-title="Minify JavaScript"><span>Minify JavaScript</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-css-above-scripts" data-title="Move CSS Above Scripts"><span>Move CSS Above Scripts</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-css-to-head" data-title="Move CSS to Head"><span>Move CSS to Head</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-image-optimize" data-title="Optimize Images"><span>Optimize Images</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-css-outline" data-title="Outline CSS"><span>Outline CSS</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-js-outline" data-title="Outline JavaScript"><span>Outline JavaScript</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-pedantic" data-title="Pedantic"><span>Pedantic</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-insert-dns-prefetch" data-title="Pre-Resolve DNS"><span>Pre-Resolve DNS</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-prioritize-critical-css" data-title="Prioritize Critical CSS"><span>Prioritize Critical CSS</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-comment-remove" data-title="Remove Comments"><span>Remove Comments</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-quote-remove" data-title="Remove Quotes"><span>Remove Quotes</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-css-rewrite" data-title="Rewrite CSS"><span>Rewrite CSS</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-domain-rewrite" data-title="Rewrite Domain"><span>Rewrite Domain</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-rewrite-style-attributes" data-title="Rewrite Style Attributes"><span>Rewrite Style Attributes</span></a></li><li class=""><a href="/speed/pagespeed/module/module-run-experiment" data-title="Run Experiments"><span>Run Experiments</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-image-sprite" data-title="Sprite Images"><span>Sprite Images</span></a></li><li class=""><a href="/speed/pagespeed/module/filter-trim-urls" data-title="Trim URLs"><span>Trim URLs</span></a></li></ul></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/pagespeed/psol" data-title="Optimization SDK"><span>Optimization SDK</span></a><ul style="display: none;"><li class=""><a href="/speed/pagespeed/porting" data-title="Porting"><span>Porting</span></a></li></ul></li></ul></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/public-dns/" data-title="Public DNS"><span>Public DNS</span></a><ul style="display: none;"><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Getting Started">Getting Started</span><ul style="display: none;"><li class=""><a href="/speed/public-dns/docs/intro" data-title="Introduction"><span>Introduction</span></a></li><li class=""><a href="/speed/public-dns/docs/using" data-title="Using Google Public DNS"><span>Using Google Public DNS</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Technical Information">Technical Information</span><ul style="display: none;"><li class=""><a href="/speed/public-dns/docs/performance" data-title="Performance Benefits"><span>Performance Benefits</span></a></li><li class=""><a href="/speed/public-dns/docs/security" data-title="Security Benefits"><span>Security Benefits</span></a></li></ul></li><li class=""><a href="/speed/public-dns/groups" data-title="Discussion Groups and Issue Reporting"><span>Discussion Groups and Issue Reporting</span></a></li><li class=""><a href="/speed/public-dns/faq" data-title="FAQ"><span>FAQ</span></a></li><li class=""><a href="/speed/public-dns/privacy" data-title="Privacy"><span>Privacy</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/libraries/" data-title="Hosted Libraries"><span>Hosted Libraries</span></a><ul style="display: none;"><li class=""><a href="/speed/libraries/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/speed/libraries/devguide" data-title="Developer's Guide"><span>Developer's Guide</span></a></li><li class=""><a href="/speed/libraries/terms" data-title="Terms of Service"><span>Terms of Service</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Protocols &amp; Standards">Protocols &amp; Standards</span><ul style="display: none;"><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/protocols" data-title="Protocols"><span>Protocols</span></a><ul style="display: none;"><li class=""><a href="/speed/protocols" data-title="Overview"><span>Overview</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/spdy/mod_spdy/" data-title="mod_spdy"><span>mod_spdy</span></a><ul style="display: none;"><li class=""><a href="/speed/spdy/mod_spdy/install" data-title="Installation and Configuration"><span>Installation and Configuration</span></a></li><li class=""><a href="/speed/spdy/mod_spdy/php" data-title="Using PHP"><span>Using PHP</span></a></li></ul></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/standards" data-title="Standards"><span>Standards</span></a><ul style="display: none;"><li class=""><a href="/speed/standards" data-title="Overview"><span>Overview</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/webp" data-title="WebP"><span>WebP</span></a><ul style="display: none;"><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Docs">Docs</span><ul style="display: none;"><li class=""><a href="/speed/webp/docs/using" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/speed/webp/docs/cwebp" data-title="The cwebp Encoder"><span>The cwebp Encoder</span></a></li><li class=""><a href="/speed/webp/docs/dwebp" data-title="The dwebp Decoder"><span>The dwebp Decoder</span></a></li><li class=""><a href="/speed/webp/docs/api" data-title="The libwebp API"><span>The libwebp API</span></a></li><li class=""><a href="/speed/webp/docs/riff_container" data-title="Container Specification"><span>Container Specification</span></a></li><li class=""><a href="/speed/webp/docs/webp_lossless_bitstream_specification" data-title="Lossless Bitstream Specification"><span>Lossless Bitstream Specification</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Study">Study</span><ul style="display: none;"><li class=""><a href="/speed/webp/docs/webp_lossless_alpha_study" data-title="Lossless and Alpha study"><span>Lossless and Alpha study</span></a></li><li class=""><a href="/speed/webp/docs/webp_study" data-title="WebP lossy study"><span>WebP lossy study</span></a></li></ul></li><li class=""><a href="/speed/webp/faq" data-title="FAQ"><span>FAQ</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/webp/gallery" data-title="Gallery"><span>Gallery</span></a><ul style="display: none;"><li class=""><a href="/speed/webp/gallery2" data-title="Lossless and Alpha Gallery"><span>Lossless and Alpha Gallery</span></a></li><li class=""><a href="/speed/webp/gallery1" data-title="WebP Lossy Gallery"><span>WebP Lossy Gallery</span></a></li></ul></li><li class=""><a href="/speed/webp/community" data-title="Community"><span>Community</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/webp/download" data-title="Download"><span>Download</span></a><ul style="display: none;"><li class=""><a href="/speed/webp/docs/precompiled" data-title="Precompiled utilities"><span>Precompiled utilities</span></a></li><li class=""><a href="/speed/webp/docs/compiling" data-title="Compiling the utilities"><span>Compiling the utilities</span></a></li><li class=""><a href="/speed/webp/docs/webp_codec" data-title="WebP Codec for Windows"><span>WebP Codec for Windows</span></a></li></ul></li></ul></li></ul></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Best Practices">Best Practices</span><ul style="display: none;"><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/articles/" data-title="Articles"><span>Articles</span></a><ul style="display: none;"><li class=""><a href="/speed/articles/tech-talks" data-title="Tech Talks at Google"><span>Tech Talks at Google</span></a></li><li class=""><a href="/speed/articles/web-metrics" data-title="Web metrics: Size and number of resources"><span>Web metrics: Size and number of resources</span></a></li><li class=""><a href="/speed/articles/use-compression" data-title="Use compression to make the web faster"><span>Use compression to make the web faster</span></a></li><li class=""><a href="/speed/articles/browser-paint-events" data-title="Capturing and analyzing browser paint events using Page Speed Activity"><span>Capturing and analyzing browser paint events using Page Speed Activity</span></a></li><li class=""><a href="/speed/articles/compressing-javascript" data-title="Compressing your JavaScript with Closure Compiler"><span>Compressing your JavaScript with Closure Compiler</span></a></li><li class=""><a href="/speed/articles/optimizing-css" data-title="CSS: Using every declaration just once"><span>CSS: Using every declaration just once</span></a></li><li class=""><a href="/speed/articles/gzip" data-title="How gzip compression works"><span>How gzip compression works</span></a></li><li class=""><a href="/speed/articles/caching" data-title="HTTP caching"><span>HTTP caching</span></a></li><li class=""><a href="/speed/articles/identifying-page-speed-problems" data-title="Improving website performance with Page Speed"><span>Improving website performance with Page Speed</span></a></li><li class=""><a href="/speed/articles/mobile" data-title="Make the mobile web faster"><span>Make the mobile web faster</span></a></li><li class=""><a href="/speed/articles/reflow" data-title="Minimizing browser reflow"><span>Minimizing browser reflow</span></a></li><li class=""><a href="/speed/articles/optimizing-javascript" data-title="Optimizing JavaScript code"><span>Optimizing JavaScript code</span></a></li><li class=""><a href="/speed/articles/optimizing-opensocial-gadgets" data-title="Optimizing OpenSocial gadgets"><span>Optimizing OpenSocial gadgets</span></a></li><li class=""><a href="/speed/articles/optimizing-images" data-title="Optimizing web graphics"><span>Optimizing web graphics</span></a></li><li class=""><a href="/speed/articles/optimizing-php" data-title="PHP performance tips"><span>PHP performance tips</span></a></li><li class=""><a href="/speed/articles/prefetching" data-title="Prefetching resources"><span>Prefetching resources</span></a></li><li class=""><a href="/speed/articles/include-scripts-properly" data-title="Properly including stylesheets and scripts"><span>Properly including stylesheets and scripts</span></a></li><li class=""><a href="/speed/articles/optimizing-html" data-title="Reducing the file size of HTML documents"><span>Reducing the file size of HTML documents</span></a></li><li class=""><a href="/speed/articles/spdy-for-mobile" data-title="SPDY performance on mobile networks"><span>SPDY performance on mobile networks</span></a></li><li class=""><a href="/speed/articles/javascript-dom" data-title="Speeding up JavaScript: Working with the DOM"><span>Speeding up JavaScript: Working with the DOM</span></a></li><li class=""><a href="/speed/articles/usability-latency" data-title="UI messaging and perceived latency"><span>UI messaging and perceived latency</span></a></li><li class=""><a href="/speed/articles/html5-performance" data-title="Using HTML 5 for performance improvements"><span>Using HTML 5 for performance improvements</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a class="tlw-title" href="/speed/docs/best-practices/rules_intro" data-title="PageSpeed Rules"><span>PageSpeed Rules</span></a><ul style="display: none;"><li class=""><a href="/speed/docs/best-practices/caching" data-title="Optimize Caching"><span>Optimize Caching</span></a></li><li class=""><a href="/speed/docs/best-practices/rtt" data-title="Minimize Round Trip Times"><span>Minimize Round Trip Times</span></a></li><li class=""><a href="/speed/docs/best-practices/request" data-title="Minimize Request Overhead"><span>Minimize Request Overhead</span></a></li><li class=""><a href="/speed/docs/best-practices/payload" data-title="Minimize Payload Size"><span>Minimize Payload Size</span></a></li><li class=""><a href="/speed/docs/best-practices/rendering" data-title="Optimize Browser Rendering"><span>Optimize Browser Rendering</span></a></li><li class=""><a href="/speed/docs/best-practices/mobile" data-title="Optimize for Mobile"><span>Optimize for Mobile</span></a></li></ul></li></ul></li><li class=""><a href="/speed/community" data-title="Community"><span>Community</span></a></li></ul></nav>
+
+
+
+      </div>
+      
+
+      <div id="gc-content">
+        
+        <div>
+  
+          
+  
+  <h1 itemprop="name" class="page-title">PageSpeed Filters</h1>
+  
+  <div itemprop="articleBody">
+  
+
+
+<p>
+PageSpeed improves web page latency by changing the resources on that
+web page to implement web performance
+<a href="/speed/docs/best-practices/rules_intro">best practices</a>.  Each sort
+of change that PageSpeed makes is embodied in a <em>filter</em>.  The filters
+are run in a pre-defined order, but can be enabled and disabled in the server
+<a href="configuration">configuration file,</a>.
+</p>
+<p>
+Some filters simply alter HTML content, such as removing excess
+whitespace, attributes, or attribute values that will be ignored.
+</p>
+<p>
+Other filters change references to CSS, JavaScript, or images to point
+to more optimized versions, because they:
+</p>
+<ul>
+  <li>are smaller,</li>
+  <li>combine multiple files into one, and</li>
+  <li>extend the cache lifetime</li>
+</ul>
+
+<h2>Categories of filters</h2>
+<p>
+Filters are of many categories that fit under performance best practices.
+The current set of filters fits in these categories as follows:
+</p>
+<a href="/speed/docs/best-practices/caching">
+  <h3>Optimize Caching</h3>
+</a>
+<ul>
+  <li><a href="filter-canonicalize-js">Canonicalize JavaScript Libraries</a>
+  </li><li><a href="filter-cache-extend">Extend Cache</a></li>
+  <li><a href="filter-cache-extend-pdfs">Extend Cache PDFs</a></li>
+  <li><a href="filter-local-storage-cache">Local Storage Cache</a></li>
+  <li><a href="filter-css-outline">Outline CSS</a></li>
+  <li><a href="filter-js-outline">Outline JavaScript</a></li>
+</ul>
+
+<a href="/speed/docs/best-practices/rtt">
+  <h3>Minimize Round Trip Times</h3>
+</a>
+<ul>
+  <li><a href="filter-css-combine">Combine CSS</a></li>
+  <li><a href="filter-flatten-css-imports">Flatten CSS @imports</a></li>
+  <li><a href="filter-css-inline">Inline CSS</a></li>
+  <li><a href="filter-js-combine">Combine JavaScript</a></li>
+  <li><a href="filter-js-inline">Inline JavaScript</a></li>
+  <li><a href="filter-css-above-scripts">Move CSS Above Scripts</a></li>
+  <li><a href="domains#shard">Configuration file directive to
+      shard domains</a></li>
+  <li><a href="filter-image-sprite">Sprite Images</a></li>
+  <li><a href="filter-insert-dns-prefetch">Pre-Resolve DNS</a></li>
+</ul>
+
+<a href="/speed/docs/best-practices/request">
+  <h3>Minimize Request Overhead</h3>
+</a>
+<ul>
+  <li><a href="filter-domain-rewrite">Rewrite Domains</a></li>
+  <li><a href="domains#mapping_rewrite">Configuration
+      file directive to map domains</a></li>
+</ul>
+
+<a href="/speed/docs/best-practices/payload">
+  <h3>Minimize Payload Size</h3>
+</a>
+<ul>
+  <li><a href="filter-whitespace-collapse">Collapse Whitespace</a></li>
+  <li><a href="filter-head-combine">Combine Heads</a></li>
+  <li><a href="filter-attribute-elide">Elide Attributes</a></li>
+  <li><a href="filter-js-minify">Minify JavaScript</a></li>
+  <li><a href="filter-image-optimize">Optimize Images</a></li>
+  <li><a href="filter-prioritize-critical-css">Prioritize Critical CSS</a></li>
+  <li><a href="filter-comment-remove">Remove Comments</a></li>
+  <li><a href="filter-quote-remove">Remove Quotes</a></li>
+  <li><a href="filter-css-rewrite">Rewrite CSS</a></li>
+  <li><a href="filter-rewrite-style-attributes">Rewrite Style Attributes</a></li>
+  <li><a href="filter-trim-urls">Trim URLs</a></li>
+</ul>
+
+<a href="/speed/docs/best-practices/rendering">
+  <h3>Optimize Browser Rendering</h3></a>
+<ul>
+  <li><a href="filter-convert-meta-tags">Convert Meta Tags</a></li>
+  <li><a href="filter-js-defer">Defer Javascript</a></li>
+  <li><a href="filter-inline-preview-images">Inline Preview Images</a></li>
+  <li><a href="filter-lazyload-images">Lazily Load Images</a></li>
+  <li><a href="filter-css-to-head">Move CSS to Head</a></li>
+  <li><a href="filter-image-optimize">Optimize Images</a></li>
+  <li><a href="filter-image-optimize#progressive">Convert JPEG to Progressive</a></li>
+  <li><a href="filter-rewrite-style-attributes">Rewrite Style Attributes</a></li>
+</ul>
+
+<h3>Other</h3>
+<ul>
+  <li><a href="filter-head-add">Add Head</a></li>
+  <li><a href="filter-instrumentation-add">Add Instrumentation</a></li>
+  <li><a href="filter-css-inline-import">Inline @import to Link</a></li>
+  <li><a href="filter-make-google-analytics-async">Make Google Analytics Async</a></li>
+  <li><a href="filter-insert-ga">Insert Google Analytics Snippet</a></li>
+  <li><a href="filter-pedantic">Pedantic</a></li>
+  <li><a href="module-run-experiment">Run Experiment</a></li>
+</ul>
+
+<p>
+In some cases, a filter such as 'Optimize Images' helps both minimize request overhead and optimize browser rendering.
+</p>
+
+  
+  </div>
+
+  
+        </div>
+        
+<div id="gc-content-footer">
+
+<div id="gc-content-license">
+
+    
+      
+        <p>Except as otherwise <a href="/readme/policies">noted</a>, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>.</p>
+      
+    
+    
+    
+
+</div>
+
+
+
+<div itemprop="datePublished" content="2013-05-23T20:26:05.598070" id="gc-content-last-updated">Last updated May 23, 2013.</div>
+
+</div>
+
+
+
+
+      </div>
+  
+
+        
+      </div>
+        
+      
+
+      
+      
+      <footer id="gc-footer">
+        <div id="gc-copyright">
+          <a href="/">
+            <img id="developers-logo-footer" src="/_static/images/developers-logo-footer.png" alt="Google Developers logo" style="vertical-align: center; float: left">
+          </a>
+          <ul>
+            <li><a href="http://www.google.com/">Google</a></li>
+            <li><a href="/readme/terms">Terms of Service</a></li>
+            <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+            <li><a class="google-feedback" data-p="81425" data-b="Documentation" data-v="devsite-20130709-rc00.default" href="">Report a bug</a></li>
+          </ul>
+        </div>
+        
+        <div id="gc-language">
+          <ul>
+            <li>
+              <form id="setlang" action="/i18n/setlang/" method="post">
+                <div style="display:none"><input name="csrfmiddlewaretoken" value="c993a16906dcd433e5ac9ccc4cf15d46" type="hidden"></div>
+                <select style="display: none;" id="footer_language" name="language">
+                  <option value="ar">
+                    العربيّة
+                  </option><option value="bg">
+                    български
+                  </option><option value="ca">
+                    català
+                  </option><option value="zh-cn">
+                    简体中文
+                  </option><option value="zh-tw">
+                    繁體中文
+                  </option><option value="hr">
+                    Hrvatski
+                  </option><option value="cs">
+                    česky
+                  </option><option value="da">
+                    Dansk
+                  </option><option value="nl">
+                    Nederlands
+                  </option><option value="en" selected="selected">
+                    English
+                  </option><option value="fa">
+                    فارسی
+                  </option><option value="fi">
+                    suomi
+                  </option><option value="fr">
+                    Français
+                  </option><option value="de">
+                    Deutsch
+                  </option><option value="el">
+                    Ελληνικά
+                  </option><option value="he">
+                    עברית
+                  </option><option value="hi">
+                    Hindi
+                  </option><option value="hu">
+                    Magyar
+                  </option><option value="id">
+                    Bahasa Indonesia
+                  </option><option value="it">
+                    italiano
+                  </option><option value="ja">
+                    日本語
+                  </option><option value="ko">
+                    한국어
+                  </option><option value="lv">
+                    latviešu
+                  </option><option value="lt">
+                    Lithuanian
+                  </option><option value="nb">
+                    Norsk (bokmål)
+                  </option><option value="nn">
+                    Norsk (nynorsk)
+                  </option><option value="pl">
+                    polski
+                  </option><option value="pt-br">
+                    Português Brasileiro
+                  </option><option value="pt">
+                    Português
+                  </option><option value="ro">
+                    Română
+                  </option><option value="ru">
+                    Русский
+                  </option><option value="sr">
+                    српски
+                  </option><option value="sk">
+                    slovenský
+                  </option><option value="sl">
+                    Slovenščina
+                  </option><option value="es">
+                    español
+                  </option><option value="sv">
+                    Svenska
+                  </option><option value="th">
+                    Thai
+                  </option><option value="tr">
+                    Türkçe
+                  </option><option value="uk">
+                    Українська
+                  </option><option value="vi">
+                    Vietnamese
+                  </option>
+                </select><span class="kd-button kd-menubutton kd-select"><div style="display: inline-block;"><div style="float: left;" class="label">
+                    English
+                  </div><div class="kd-disclosureindicator"></div></div></span>
+              </form>
+            </li>
+          </ul>
+        </div>
+        
+      </footer>
+      
+      
+    </div>
+    <div id="needAuth" class="msgDialogContent">
+      
+      <h1>Authentication required</h1>
+      
+      <div>
+        You need to be signed in with <a href="http://www.google.com/+">Google+</a> to do that.
+      </div>
+      <button>Sign in</button>
+      <button>Cancel</button>
+    </div>
+    <div id="signingIn" class="msgDialogContent">
+      
+      <h1>Signing you in...</h1>
+      <div>
+        
+        Google Developers needs your permission to do that.
+      </div>
+      
+      <button>Try again</button>
+      
+      <button>Cancel</button>
+    </div>
+    <script src="/_static/js/script_foot.js"></script>
+    <script>
+      (function($) {
+        devsite.devsite.Init($, null, '');
+      })(jQuery);
+
+      
+      devsite.localInit = function() {
+        
+      };
+      
+    </script>
+    <!-- Google Code for PXL - Developers - Codesite - HP - 90d Remarketing List -->
+    <script type="text/javascript">
+    $('#setlang select').each(function() {
+      if ($.browser.msie) {
+        $(this).change(function() {
+          $('#setlang').submit();
+        });
+      } else {
+        $(this).kdSelect({'change': function() {
+          $('#setlang').submit();
+        }});
+      }
+    });
+    </script><ul class="kd-menulist" style="position: absolute; left: 960px; top: 10581px; display: none;"><li style="" class="kd-menulistitem">
+                    العربيّة
+                  </li><li class="kd-menulistitem">
+                    български
+                  </li><li class="kd-menulistitem">
+                    català
+                  </li><li class="kd-menulistitem">
+                    简体中文
+                  </li><li class="kd-menulistitem">
+                    繁體中文
+                  </li><li class="kd-menulistitem">
+                    Hrvatski
+                  </li><li class="kd-menulistitem">
+                    česky
+                  </li><li class="kd-menulistitem">
+                    Dansk
+                  </li><li class="kd-menulistitem">
+                    Nederlands
+                  </li><li style="font-weight: normal;" class="kd-menulistitem selected">
+                    English
+                  </li><li class="kd-menulistitem">
+                    فارسی
+                  </li><li class="kd-menulistitem">
+                    suomi
+                  </li><li class="kd-menulistitem">
+                    Français
+                  </li><li class="kd-menulistitem">
+                    Deutsch
+                  </li><li class="kd-menulistitem">
+                    Ελληνικά
+                  </li><li class="kd-menulistitem">
+                    עברית
+                  </li><li class="kd-menulistitem">
+                    Hindi
+                  </li><li class="kd-menulistitem">
+                    Magyar
+                  </li><li class="kd-menulistitem">
+                    Bahasa Indonesia
+                  </li><li class="kd-menulistitem">
+                    italiano
+                  </li><li class="kd-menulistitem">
+                    日本語
+                  </li><li class="kd-menulistitem">
+                    한국어
+                  </li><li class="kd-menulistitem">
+                    latviešu
+                  </li><li class="kd-menulistitem">
+                    Lithuanian
+                  </li><li class="kd-menulistitem">
+                    Norsk (bokmål)
+                  </li><li class="kd-menulistitem">
+                    Norsk (nynorsk)
+                  </li><li class="kd-menulistitem">
+                    polski
+                  </li><li class="kd-menulistitem">
+                    Português Brasileiro
+                  </li><li class="kd-menulistitem">
+                    Português
+                  </li><li class="kd-menulistitem">
+                    Română
+                  </li><li class="kd-menulistitem">
+                    Русский
+                  </li><li class="kd-menulistitem">
+                    српски
+                  </li><li class="kd-menulistitem">
+                    slovenský
+                  </li><li class="kd-menulistitem">
+                    Slovenščina
+                  </li><li class="kd-menulistitem">
+                    español
+                  </li><li class="kd-menulistitem">
+                    Svenska
+                  </li><li class="kd-menulistitem">
+                    Thai
+                  </li><li class="kd-menulistitem">
+                    Türkçe
+                  </li><li class="kd-menulistitem">
+                    Українська
+                  </li><li class="kd-menulistitem">
+                    Vietnamese
+                  </li></ul>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 992540712;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "qio2CKCPwQMQqPCj2QM";
+      var google_conversion_value = 0;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script><img src="https://www.googleadservices.com/pagead/conversion/992540712/?random=1373460913372&amp;cv=7&amp;fst=1373460913372&amp;num=1&amp;fmt=3&amp;value=0&amp;label=qio2CKCPwQMQqPCj2QM&amp;bg=ffffff&amp;hl=en&amp;guid=ON&amp;u_h=800&amp;u_w=1280&amp;u_ah=776&amp;u_aw=1215&amp;u_cd=24&amp;u_his=2&amp;u_tz=60&amp;u_java=true&amp;u_nplug=7&amp;u_nmime=81&amp;ref=https%3A//www.google.com/url%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D1%26cad%3Drja%26ved%3D0CC4QFjAA%26url%3Dhttps%253A%252F%252Fdevelopers.google.com%252Fspeed%252Fpagespeed%252Fmodule%252Ffilters%26ei%3DAlfdUYHzD_Ku4QTpxIFA%26usg%3DAFQjCNGPRFEJGDDpUHiiMfA4CET-6oPVnA%26sig2%3DgO7Mc86_ADi7c5tqVdJIjA%26&amp;url=https%3A//developers.google.com/speed/pagespeed/module/filters&amp;frm=0" width="1" border="0" height="1">
+
+    
+
+    <script>
+      
+      google.load('visualization', '1', {packages: ['table']});
+    </script><script src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;packages=table" type="text/javascript"></script><script src="https://www.google.com/uds/api/visualization/1.0/00133a5412d5113dfca30a1ffd3afe93/format+fr,default,table.I.js" type="text/javascript"></script>
+
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992540712/?label=qio2CKCPwQMQqPCj2QM&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+    
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    // Render any carousels on the page
+    $('.carousel').carousel();
+    // Render any feed widgets on the page
+    
+    $('.feed').rss();
+    $('.feed-plain').rss();
+    // Render any OSS widgets on the page.
+    $('.oss').oss();
+    });
+</script>
+
+<script type="text/javascript" defer="">
+
+
+$(document).ready(function() {
+    contentTimer.name = 'content';
+    contentTimer.tick('ol');
+    window.jstiming.report(contentTimer);
+
+    // Boilerplate javascript to enable the plusone button
+    var po = document.createElement('script'); po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js?onload=devsite_plusoneLoaded';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+});
+</script>
+
+
+
+
+
+  
+
+  
+

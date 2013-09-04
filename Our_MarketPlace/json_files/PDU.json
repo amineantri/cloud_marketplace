@@ -1,0 +1,16 @@
+{
+"c9de98de-e7f5-11e2-afb7-7a88c8d43e55":{
+"is_enabled":false,
+"zone_uuid":"938da846-e657-11e2-b403-7a88c8d43e55",
+"vendor":"",
+"description":"",
+"tags":{
+},
+"port_count":200,
+"name":"pdu 20",
+"created_on":"2013-07-08 18:42:41.434998",
+"updated_on":"2013-07-08 18:43:00.266305",
+"model_name":"",
+"uuid":"c9de98de-e7f5-11e2-afb7-7a88c8d43e55"
+}
+}

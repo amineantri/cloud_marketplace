@@ -1,0 +1,52 @@
+{% extends "base/page.html" %}
+{% block main %}
+		<div class="page-header">
+  			<h5>{{ Company_name }} Profil</h5>
+  		</div>
+			<div class="row">
+			<div class="span3 columns">
+				<h4>{{ Company_name }} Account</h4> <hr />
+					<a href="{% url get_information user_id %}"><p>Get all information about {{ Company_name }}.</p></a>
+					<br />
+				<h4>My Servers</h4> <hr/>
+					<p>{{ Company_name }} servers.</p>										
+			</div>
+			
+				<div class="span13">
+							{% if data  %}  							
+ 					  		<h3>Your Servers</h3>
+ 					  		<hr />
+ 					  		<center> 
+							<TABLE width=100% border=1>
+							<tr>
+								<th style="text-align:center;">{{ 'Server Name'|title}}</th>
+								<th style="text-align:center;">{{'Prize Per Month'|title}}</th>
+								<th style="text-align:center;">{{'Cores Number'|title}}</th>
+								<th style="text-align:center;">{{'RAM Size'|title}}</th>
+								<th style="text-align:center;">{{'HDD Size'|title}}</th>
+								<th style="text-align:center;">{{'HDD type'|title}}</th>
+								<th style="text-align:center;">{{'OS'|title}}</th>
+								<th style="text-align:center;"></th>	
+							</tr>
+							{% for item in data %}
+							<tr>	
+								
+									<td><center>{{ item.Server_Name }}</center></td>
+									<td><h4><center>{{ item.prize }} $</center> </h4></td>
+ 							   		<td><center>{{ item.Processor_Cores }}</center></td>
+    					       		<td><center>{{ item.RAM_Size }} GB</center></td>
+        							<td><center>{{ item.Hard_Disk_Drive }} GB</center></td>	 
+    						   		<td><center>{{ item.HDD_type }} </center></td>
+    						   		<td><center>{{ item.Operating_system }}</center></td>
+									<td><center><a href="{% url buy_now %}"><input class="btn primary" name="commit" type="submit" value="Buy Now"></a></center></td>
+								
+							</tr>
+							{% endfor %}
+						</table>
+						</center>
+ 					  		{% endif %}
+ 					  		
+  				</div>
+  			</div>
+
+{% endblock %}

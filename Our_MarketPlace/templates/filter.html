@@ -1,0 +1,164 @@
+{% extends "base/page.html"%}
+
+    {% block extra_head %}
+    {% load url from future %}
+	{% load dajaxice_templatetags %}
+    {% load static %}
+    
+    {% with "dajax/"|add:js_library|add:".dajax.core.js" as file %}
+    <script type="text/javascript" src="{% static file %}"></script>
+    {% endwith %}
+     
+	{% dajaxice_js_import %}
+	
+    <script type="application/javascript">
+	Filter = {}
+	$(function(){
+		Filter.continent = $('#combo1')
+		Filter.country = $('#combo2')
+		Filter.city = $('#combo3')
+		Filter.street = $('#combo4')
+		//...
+		Filter.continent.bind('change', function(e){
+		  var v = Filter.continent.val()
+		  console.log(v)
+		  if(v !== "0")
+		    Filter.country.removeAttr("disabled")
+		  else
+		    Filter.country.attr("disabled", "disabled")
+		    Filter.city.attr("disabled", "disabled")		    
+		    Filter.street.attr("disabled", "disabled")
+		    
+		 
+	
+		})
+		Filter.country.bind('change', function(e){
+		  var v = Filter.country.val()
+		  console.log(v)
+		  if(v !== "0")
+		    Filter.city.removeAttr("disabled")
+		  else
+		    Filter.city.attr("disabled", "disabled")
+		    Filter.street.attr("disabled", "disabled")
+		    
+		    
+		    
+		    })
+		Filter.city.bind('change', function(e){
+		  var v = Filter.city.val()
+		  console.log(v)
+		  if(v !== "0")
+		    Filter.street.removeAttr("disabled")
+		  else
+		    Filter.street.attr("disabled", "disabled")
+		})
+	})
+	</script>{% endblock %}
+
+{% block main %}
+ <div class="page-header">
+<h1>Filter </h1>
+</div>
+<div class="row">
+        <div class="span4 columns">
+        
+        
+	<form action="/filter/" method="post">{% csrf_token %}
+	{% if error %}
+        <div class="alert-message block-message error">
+        	<div class="errors">
+        		{{ error }}
+        	</div>
+        </div>
+        {% endif %}
+	<h4>Continent :</h4>
+	<select id="combo1" name="combox1" onchange="Dajaxice.Our_MarketPlace.updatecombo1(Dajax.process, {'option':this.value})" size="1" >
+		<option value="Select..">Select..</option>
+	{% for key, value in items %}		
+		<option value="{{value}}">{{value}}</option>
+	{% endfor %}
+	</select>
+	<h4>Country :</h4><select id="combo2" name="combox2" onchange="Dajaxice.Our_MarketPlace.updatecombo2(Dajax.process, {'option':this.value})" size="1" disabled></select>
+	<h4>City :</h4><select id="combo3" name="combox3" onchange="Dajaxice.Our_MarketPlace.updatecombo3(Dajax.process, {'option':this.value})" size="1" disabled></select>
+	<h4>Street :</h4><select id="combo4" name="combox4" onchange="" size="1" disabled></select>
+	<h4>Currency :</h4>
+	<select id="combo5" name="combox5"  size="1">
+		<option value="Select..">Select..</option>
+		<option value="USD">USD</option>
+		<option value="EURO">EURO</option>
+		<option value="GBP">GBP</option>
+		<option value="CNY">CNY</option>
+		<option value="JPY">JPY</option>	
+	</select>
+	<br/>
+		<br/>
+		<br/>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input class="btn primary" name="commit" type="submit" value="Filter"></p>
+          
+      
+  </form>
+</div>
+<div class="span13">
+						{% if not data %}
+							<h2>{{ message }}<h2>
+						{% endif %}
+						<h3>Choose at least a continent.</h3><hr /> 
+						
+						
+							{% if data  %}  							
+							<h2>All servers and their features Filtered by {% for item in filtered %}{{ item }}, {% endfor %}</h2>
+ 					  		<hr />
+ 					  		<center> 
+							<TABLE width=100% border=1>
+							<tr>
+								<th style="text-align:center;">{{ 'Provider'|title}}</th>
+								<th style="text-align:center;">{{ 'Server Name'|title}}</th>
+								<th style="text-align:center;">{{'Prize Per Month'|title}}</th>
+								<th style="text-align:center;">{{'Cores Number'|title}}</th>
+								<th style="text-align:center;">{{'RAM Size'|title}}</th>
+								<th style="text-align:center;">{{'HDD Size'|title}}</th>
+								<th style="text-align:center;">{{'HDD type'|title}}</th>
+								<th style="text-align:center;">{{'OS'|title}}</th>
+								<th style="text-align:center;"></th>	
+							</tr>
+							{% for item in data %}
+							<tr>	
+									
+									{% with user_id=item.user_id %}
+									
+									<td><center><a href="{% url "accounts" user_id %}">{{ item.Company_name }}</a></center></td>
+									{% endwith %}
+									<td><center>{{ item.Server_Name }}</center></td>
+									<td><h4><center>{{ item.Prize }} $</center> </h4></td>
+ 							   		<td><center>{{ item.Processor_Cores }}</center></td>
+    					       		<td><center>{{ item.RAM_Size }} GB</center></td>
+        							<td><center>{{ item.Hard_Disk_Drive }} GB</center></td>	 
+    						   		<td><center>{{ item.HDD_type }} </center></td>
+    						   		<td><center>{{ item.Operating_system }}</center></td>
+									<td><center >
+									<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+ 									<input type="hidden" name="cmd" value="_xclick">
+ 									<input type="hidden" name="business" value="imoum0@gmail.com">
+ 									<input type="hidden" name="item_name" value="{{ item.Server_Name }}">
+ 									<input type="hidden" name="amount" value="{{ item.Prize }}">
+ 									<input type="hidden" name="currency_code" value="USD">
+ 									<input type="hidden" name="button_subtype" value="products">
+ 									<input type="hidden" name="return" value="http://127.0.0.1:8000/status/id={{ item.server_id }}/uid={{ item.user_id }}"> 
+ 									<input type="image" width="95%" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									</form>
+
+</center></td>
+								
+							</tr>
+							{% endfor %}
+						</table>
+						</center>
+ 					{% endif %}
+ 					
+                    
+</div>
+</div>
+
+    
+
+{% endblock %}

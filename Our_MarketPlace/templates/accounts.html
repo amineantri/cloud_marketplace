@@ -1,0 +1,46 @@
+{% extends "base/page.html" %}
+{% block extra_head %}
+    {% load url from future %}
+    {% load static %}
+<link type="text/css" rel="stylesheet" href="{% get_static_prefix %}tsc_blockquotes_and_pullquotes.css" />
+<link type="text/css" rel="stylesheet" href="{% get_static_prefix %}tsc_form_contact_light.css" />
+
+<script type="text/javascript" src="{% get_static_prefix %}tsc_form_contact.js"></script>
+{% endblock %}
+{% block main %}
+		<div class="page-header">
+  			<h5>{{ Company_name }} Profil.</h5>
+  		</div>
+			<div class="row">
+			<div class="span3 columns">
+				<h4>{{ Company_name }} Account</h4> <hr />
+					<a href="{% url "get_information" user_id  %}"><p>Get all information about {{ Company_name }}.</p></a>
+					<br />
+				<h4>My Servers</h4> <hr/>
+					<a href="{% url "company_servers" user_id %}"><p>Display {{ Company_name }} servers.</p></a>										
+			</div>
+			
+				<div class="span14">
+  							<h4>Get started </h4>
+  							<hr />
+             				<p>Welcome to {{ Company_name }} account for Cloud Hosting Company.</p>
+             		   	    <form accept-charset="UTF-8" action="{% url "accounts" user_id %}" class="tsc_form_contact_light nolabel"class="form-stacked" method="post">{% csrf_token %}
+						    <input type="text" name="name" class="form-input" placeholder="Name (required)" required />
+    						<input type="email" name="email" class="form-input" placeholder="Email (required)" required />
+    						<textarea name="message" class="form-input"  placeholder="Message (required)" required></textarea>
+    						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    						<input class="btn primary" name="commit" type="submit" value="Add Comment"/></p>
+  							</form>
+  							{% if data %}
+  							{% for item in data %}             				
+ 					  		<blockquote class="tsc_teal_blockquotes">
+    							<p>{{ item.message }}</p>
+    							<p> <cite>– {{ item.sender_name }}, {{ item.sender_email }}</cite> </p>
+  							</blockquote>
+  							{% endfor %}
+  							{% endif %}
+  				</div>
+  		</div>
+
+{% endblock %}
+  

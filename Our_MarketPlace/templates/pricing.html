@@ -1,0 +1,108 @@
+{% extends "base/page.html" %}
+{% block extra_head %}
+    {% load url from future %}
+    {% load static %}
+    <script src="{% get_static_prefix %}tsc_pricingtables.js" type="text/javascript"></script>
+    <link href="{% get_static_prefix %}tsc_pricingtables.css" media="screen" rel="stylesheet" type="text/css">
+{% endblock %}    
+
+{% block main %}
+<!-- DC Pricing Tables:2 Start -->
+  <div  class="tsc_pricingtable02 pricing_five">
+    <ul width="60%" class="pricing_column_first">
+      <li class="pricing_header1"></li>
+      <li class="pricing_header2"><span>Choose a Plan</span></li>
+      <li class="odd"> <a class="tooltip" href="#">Disk Storage <span>The amount of disk storage we provide you with every account purchase.</span> </a> </li>
+      <li class="even"> <a class="tooltip" href="#">Bandwidth <span>Amount of data transfer bandwidth provided to each account, per month.</span> </a> </li>
+      <li class="odd"><span>Domain Names</span></li>
+      <li class="even"> <a class="tooltip" href="#">Subdomains <span>Number of subdomain assigned to your account. </a> </li>
+      <li class="odd"><span>Site Builder</span></li>
+      <li class="even"><span>Backups</span></li>
+      <li class="odd"> <a class="tooltip" href="#">CPANEL <span>Web-based control panel system.</span> </a> </li>
+      <li class="even"><span>Email Accounts</span></li>
+      <li class="odd"><span>MySQL Databases</span></li>
+      <li class="even"> <a class="tooltip" href="#">Setup Fee <span>One-time joining fee that must be paid prior to account activation.</span> </a> </li>
+      <li class="odd"><span>24/7 Support</span></li>
+      <li class="even"><span>30-Days Money Back</span></li>
+      <li class="odd"><span>Templates</span></li>
+      <li class="pricing_footer"></li>
+    </ul>
+    <div class="pricing_hover_area">
+      <ul class="pricing_column red">
+        <li class="pricing_header1">Starter</li>
+        <li class="pricing_header2">$5 <span>/mo.</span></li>
+        <li class="odd">10GB</li>
+        <li class="even">100GB</li>
+        <li class="odd">1</li>
+        <li class="even">10</li>
+        <li class="odd"><span class="pricing_no"></span></li>
+        <li class="even"><span class="pricing_no"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even">10</li>
+        <li class="odd">5</li>
+        <li class="even"><span class="pricing_no"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even"><span class="pricing_yes"></span></li>
+        <li class="odd"><span class="pricing_no"></span></li>
+        <li class="pricing_footer"><a href="#" class="tsc_buttons2 black">Sign Up</a></li>
+      </ul>
+      <ul class="pricing_column green">
+        <li class="pricing_header1">Basic</li>
+        <li class="pricing_header2">$10 <span>/mo.</span></li>
+        <li class="odd">50GB</li>
+        <li class="even">500GB</li>
+        <li class="odd">10</li>
+        <li class="even">50</li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even"><span class="pricing_yes"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even">50</li>
+        <li class="odd">10</li>
+        <li class="even"><span class="pricing_no"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even"><span class="pricing_yes"></span></li>
+        <li class="odd"><span class="pricing_no"></span></li>
+        <li class="pricing_footer"><a href="#" class="tsc_buttons2 black">Sign Up</a></li>
+      </ul>
+      <ul class="pricing_column blue">
+        <li class="pricing_header1">Professional</li>
+        <li class="pricing_header2">$29 <span>/mo.</span></li>
+        <li class="odd">100GB</li>
+        <li class="even">1000GB</li>
+        <li class="odd">Unlimited</li>
+        <li class="even">Unlimited</li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even"><span class="pricing_yes"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even">Unlimited</li>
+        <li class="odd">50</li>
+        <li class="even"><span class="pricing_no"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even"><span class="pricing_yes"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="pricing_footer"><a href="#" class="tsc_buttons2 black">Sign Up</a></li>
+      </ul>
+      <ul class="pricing_column black">
+        <li class="pricing_header1">Business</li>
+        <li class="pricing_header2">$39 <span>/mo.</span></li>
+        <li class="odd">500GB</li>
+        <li class="even">Unlimited</li>
+        <li class="odd">Unlimited</li>
+        <li class="even">Unlimited</li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even"><span class="pricing_yes"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even">Unlimited</li>
+        <li class="odd">200</li>
+        <li class="even"><span class="pricing_no"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="even"><span class="pricing_yes"></span></li>
+        <li class="odd"><span class="pricing_yes"></span></li>
+        <li class="pricing_footer"><a href="#" class="tsc_buttons2 black">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- DC Pricing Tables:2 End -->
+<div class="tsc_clear"></div>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+  <head>
+  {% load static %}
+
+{% load url from future %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="title" content="dajaxproject.com - Easy to use ajax libraries for django" />
+    <meta name="author" content="Jorge Bastida"/>
+    <meta name="Description" content="Easy to use ajax libraries for django"/>
+    <meta name="Keywords" content="dajax dajaxice django ajax python library framework prototype mootools jquery xajax easy fast"/>
+    <meta name="Language" content="English"/>
+    <meta name="Revisit-After" content="7 days"/>
+    <meta name="distribution" content="Global"/>
+    <meta name="Robots" content="INDEX,FOLLOW"/>
+    <meta name="verify-v1" content="QkQb7KQ3WgWQoEnlkSB4BGcSJB9e50ru2xUGQk1rD4Q=" />
+    <meta name="google-site-verification" content="AZfYpJitSW5RE0B7BB3PRb7E8hqOET3m3ZKLGV304WI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Computing MarketPlace - {% block title %}Get your Servers so easily and securely{% endblock %}</title>
+
+  <link href="{% get_static_prefix %}bootstrap.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="{% get_static_prefix %}monospace.css" media="screen" rel="stylesheet" type="text/css">
+    
+    <script src="https://js.stripe.com/v1/" type="text/javascript"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+        //]]>
+    </script>
+    <script src="{% get_static_prefix %}jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}jquery.min.js" type="text/javascript"></script> 
+    <script src="{% get_static_prefix %}application.js" type="text/javascript"></script>
+
+
+    <link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+   
+ {% block extra_head %}{% endblock %}
+    
+    
+ 
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <h3><a href="{% url "home" %}">Home</a></h3>
+          {% if user.is_authenticated %}
+          <h3><a href="{% url "filter" %}">Filter</a></h3>
+          {% endif %}
+          <ul class="nav">
+          {% if user.is_authenticated %}
+          	<li><a href="{% url "company_profile" %}"><img src="{% get_static_prefix %}color-user-male.png" />  {{   user.username }}</a></li>  
+            <li><a href="{% url "sign_out" %}">Sign Out</a></li>       
+          {% else %}
+            <li><a href="{% url "login" %}">Sign In</a></li>
+            <li><a href="{% url "sign_up" %}">Sign Up</a></li>
+          {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main container">
+ {% block main %}{% endblock %}
+ 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<footer>
+    <p>this is the footer</p>
+    </footer>
+      </div>
+           
+
+     </div>
+    </div>
+  </body>
+</html>

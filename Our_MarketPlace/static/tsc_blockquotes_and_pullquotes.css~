@@ -1,0 +1,128 @@
+/* Pullquotes 
+-------------------------------------------------------------- */
+.tsc_pullquote,
+.tsc_pullquote2,
+.tsc_pullquote3,
+.tsc_pullquote4 { display:inline-block; float:left; margin-right:4%; margin-top:20px!important; margin-bottom:20px!important; width:40%; }
+.tsc_pullquote,
+.tsc_pullquote2,
+.tsc_pullquote3 { font-family:"Times New Roman", Georgia, Times, serif; letter-spacing:-.5px; font-size:22px; line-height:30px; }
+.tsc_pullquote { border:1px solid #fff; padding:19px; }
+.tsc_pullquote2 { border-left:3px solid; font-size:16px; line-height:25px; letter-spacing:0; padding:0 0 0 17px; width:36%; }
+.tsc_pullquote3 { border-top:4px double #e0e0e0; border-bottom:4px double #e0e0e0; padding:22px 0; margin-top:20px !important; }
+.tsc_pullquote4 { background:#222222 url(../images/button_overlay.png) repeat-x 0 -8px; border:3px solid #111; color:#f8f8f8; padding:19px; font-size:14px; box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4) inset, -1px -1px 0 rgba(255, 255, 255, 0.4) inset, 1px 0 0 rgba(0, 0, 0, 0.1); }
+.quotes:before { content:'\201C'; font-weight:bold; margin-right:5px; font-size:150%; display:inline; vertical-align:middle; }
+.quotes:after { content:'\201D'; font-weight:bold; margin-left:5px; font-size:150%; display:inline; vertical-align:middle; }
+.tsc_pullquote.aligncenter,
+.tsc_pullquote2.aligncenter,
+.tsc_pullquote3.aligncenter,
+.tsc_pullquote4.aligncenter { float:none; text-align:left; width:auto; display:block; }
+.tsc_pullquote.alignleft,
+.tsc_pullquote.aligncenter { margin-left:2px; }
+.tsc_pullquote.alignright,
+.tsc_pullquote.aligncenter { margin-right:2px; }
+/* Icon Variations 
+-------------------------------------------------------------- */
+.tsc_red_blockquotes { background-image:url(../images/blockquotes_770000.png) !important; }
+.tsc_orange_blockquotes { background-image:url(../images/blockquotes_e98813.png) !important; }
+.tsc_yellow_blockquotes { background-image:url(../images/blockquotes_f7c808.png) !important; }
+.tsc_green_blockquotes { background-image:url(../images/blockquotes_74941f.png) !important; }
+.tsc_olive_blockquotes { background-image:url(../images/blockquotes_3a491a.png) !important; }
+.tsc_teal_blockquotes { background-image:url(/static/blockquotes_008899.png) !important; }
+.tsc_blue_blockquotes { background-image:url(../images/blockquotes_00437f.png) !important; }
+.tsc_deepblue_blockquotes { background-image:url(../images/blockquotes_092334.png) !important; }
+.tsc_purple_blockquotes { background-image:url(../images/blockquotes_4b2c5a.png) !important; }
+.tsc_hotpink_blockquotes { background-image:url(../images/blockquotes_bc006e.png) !important; }
+.tsc_slategrey_blockquotes { background-image:url(../images/blockquotes_3b424a.png) !important; }
+.tsc_mauve_blockquotes { background-image:url(../images/blockquotes_625b56.png) !important; }
+.tsc_pearl_blockquotes { background-image:url(../images/blockquotes_ab998f.png) !important; }
+.tsc_steelblue_blockquotes { background-image:url(../images/blockquotes_788794.png) !important; }
+.tsc_mossgreen_blockquotes { background-image:url(../images/blockquotes_717a75.png) !important; }
+.tsc_wheat_blockquotes { background-image:url(../images/blockquotes_79745d.png) !important; }
+.tsc_coffee_blockquotes { background-image:url(../images/blockquotes_372e25.png) !important; }
+.tsc_copper_blockquotes { background-image:url(../images/blockquotes_6b3c02.png) !important; }
+.tsc_silver_blockquotes { background-image:url(../images/blockquotes_dddddd.png) !important; }
+.tsc_black_blockquotes { background-image:url(../images/blockquotes_222222.png) !important; }
+/* Text Variations 
+-------------------------------------------------------------- */
+.tsc_red_blockquotes a { color:#700 !important; }
+.tsc_orange_blockquotes a { color:#e98813 !important; }
+.tsc_yellow_blockquotes a { color:#f7c808 !important; }
+.tsc_green_blockquotes a { color:#74941f !important; }
+.tsc_olive_blockquotes a { color:#3a491a !important; }
+.tsc_teal_blockquotes a { color:#089 !important; }
+.tsc_blue_blockquotes a { color:#00437f !important; }
+.tsc_deepblue_blockquotes a { color:#092334 !important; }
+.tsc_purple_blockquotes a { color:#4b2c5a !important; }
+.tsc_hotpink_blockquotes a { color:#bc006e !important; }
+.tsc_slategrey_blockquotes a { color:#3b424a !important; }
+.tsc_mauve_blockquotes a { color:#625b56 !important; }
+.tsc_pearl_blockquotes a { color:#ab998f !important; }
+.tsc_steelblue_blockquotes a { color:#788794 !important; }
+.tsc_mossgreen_blockquotes a { color:#717a75 !important; }
+.tsc_wheat_blockquotes a { color:#79745d !important; }
+.tsc_coffee_blockquotes a { color:#372e25 !important; }
+.tsc_copper_blockquotes a { color:#6b3c02 !important; }
+.tsc_silver_blockquotes a { color:#999 !important; }
+.tsc_black_blockquotes a { color:#111 !important; }
+/* Blockquotes 
+-------------------------------------------------------------- */
+blockquote { font-size:14px; margin:20px 0; padding:5px 5px 5px 45px; background:url(../images/blockquotes_dddddd.png) no-repeat 0 10px; }
+blockquote p { margin-bottom:0; }
+cite { font-size:10px; color:#aaa; }
+/* Alignment Shortcodes 
+-------------------------------------------------------------- */
+.aligncenter { display:block; margin:20px auto; text-align:center; clear:both; }
+.alignright { float:right; margin:5px 0 20px 4%; }
+.alignleft { float:left; margin:5px 4% 20px 0; }
+/* Gradients
+-------------------------------------------------------------- */
+.tsc_pullquote { background-color:#f6f6f6; background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#f6f6f6)); background:-moz-linear-gradient(top, #fff, #f6f6f6); background:-o-linear-gradient(top, #fff, #f6f6f6); background:linear-gradient(top, #fff, #f6f6f6); }
+/* Box Shadows
+-------------------------------------------------------------- */
+.tsc_pullquote { -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, .1); -moz-box-shadow:0 1px 3px rgba(0, 0, 0, .1); box-shadow:0 1px 3px rgba(0, 0, 0, .1); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * Item Styles
+	 */
+
+.tsc_quotes-rotator-container1 {
+	margin:0px;
+	padding:0px;
+}
+
+	.quovolve {
+		margin: 20px 0;
+		width: 100%;
+	}
+	.quovolve blockquote {
+		margin: 0;
+	}
+	.quovolve blockquote p {
+		margin: 10px 0;
+	}
+	.quotes ul {
+		list-style: none;
+	}
+
+

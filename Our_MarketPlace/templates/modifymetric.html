@@ -1,0 +1,44 @@
+{% extends "base/page.html" %}
+{% block main %}
+		<div class="page-header">
+  			<H2>My Account</h2>
+  		</div>
+			<div class="row">
+			<div class="span3 columns">
+				<h4>My Account</h4> <hr />
+					<a href="{% url modify_account %}"><p>Modify Account</p></a>
+					<br />
+				<h4>My Servers</h4> <hr/>
+					<a href="{% url add_server %}"><p>Add New Server</p></a>
+					<a href="{% url display_servers %}"><p>Display servers</p></a>
+					<a href="{% url modify_metric %}"><p>Modify Metric</p></a>
+									
+			</div>
+			
+				<div class="span14">  
+      <div class="page-header">
+        <h3>Modify Metric</h3>
+      </div>
+      <div class="row">
+        <div class="span6 columns">
+          <form accept-charset="UTF-8" action="{% url modify_metric %}" class="form-stacked" method="post">{% csrf_token %}
+          {% if form.is_bound and not form.is_valid %}
+            <div class="alert-message block-message error">
+              <div class="errors">
+                {% for field in form.visible_fields %}
+                  {% for error in field.errors %}
+                  <p>{{ field.label }}: {{ error }}</p>
+                  {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                  <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          {% for field in form %}{% include "base/field.html" %}{% endfor %}
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn primary" name="commit" type="submit" value="Submit"></p>
+          </form>
+        </div>
+      </div>  
+{% endblock %}

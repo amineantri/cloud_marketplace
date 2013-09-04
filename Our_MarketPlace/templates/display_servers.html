@@ -1,0 +1,71 @@
+{% extends "base/page.html" %}
+{% block main %}
+		<div class="page-header">
+  			<H2>My Account</h2>
+  		</div>
+			<div class="row">
+			<div class="span3 columns">
+				<h4>My Account</h4> <hr />
+					<a href="{% url modify_account %}"><p>Modify Account</p></a>
+					<br />
+				<h4>My Servers</h4> <hr/>
+					<a href="{% url add_server %}"><p>Add New Server</p></a>
+					<p>Display servers</p>
+					<a href="{% url modify_metric %}"><p>Modify Metric</p></a>
+					{% if data == 1 %}
+					<a href ="{% url display_servers %} <p> Display existants servers </p>
+					{% endif %}					
+			</div>
+			
+				<div class="span14">
+							{% if data  %}  							
+ 					  		<h3>Your Servers</h3>
+ 					  		<hr />
+ 					  		<center> 
+							<TABLE width=100% border=1>
+							<tr>
+								<th style="text-align:center;">{{'OS'|title}}</th>
+								<th style="text-align:center;">{{'Prize'|title}}</th>
+								<th style="text-align:center;">{{ 'Server Name'|title}}</th>
+								<th style="text-align:center;">{{'RAM Size'|title}}</th>
+								<th style="text-align:center;">{{'Cores Number'|title}}</th>
+								<th style="text-align:center;">{{'HDD Size'|title}}</th>
+								<th style="text-align:center;">{{'HDD type'|title}}</th>
+							</tr>
+							{% for item in data %}
+							<tr>
+								{% for key, value in item.items %}
+		
+ 							   		{% if key == 'Server_Name' %}
+										<td><h4><center>{{ value }}</center> </h4></td>
+ 							   		{% endif %}  
+ 							   		{% if key == 'prize' %}
+										<td><h4><center>{{ value }} $</center> </h4></td>
+ 							   		{% endif %} 
+    					       		{% if key == 'Processor_Cores' %}
+        								 <td><center>{{ value }}</center></td>
+    						   		{% endif %}
+     						   		{% if key == 'RAM_Size' %}
+        								  <td><center>{{ value }} GB</center></td>
+							   		{% endif %}
+							   		{% if key == 'HDD_type' %}
+         								  <td><center>{{ value }} </center></td>
+							   		{% endif %}
+									{% if key == 'Hard_Disk_Drive' %}
+         								  <td><center>{{ value }} GB</center></td>
+							   		{% endif %}
+							   		{% if key == 'Operating_system' %}
+       									  <td><center>{{ value }}</center></td>
+							   		{% endif %} 
+
+								{% endfor %}
+							</tr>
+							{% endfor %}
+						</table>
+						</center>
+ 					  		{% endif %}
+ 					  		
+  				</div>
+  			</div>
+
+{% endblock %}

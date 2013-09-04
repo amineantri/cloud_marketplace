@@ -1,0 +1,48 @@
+{% extends "base/page.html" %}
+
+{% block extra_head %}
+
+    {% load url from future %}
+    {% load static %}
+<link type="text/css" rel="stylesheet" href="{% get_static_prefix %}tsc_message_box.css" />
+ <script type="text/javascript" src="{% get_static_prefix %}jquery.cookie.js" type="text/javascript"></script>
+<script type="text/javascript" src="{% get_static_prefix %}tsc_message_box.js" type="text/javascript"></script>
+
+{% endblock %}
+
+{% block main %}
+
+		<div class="page-header">
+  			<h5>Welcome to your account for Cloud Hosting Companies, {{ Company_name }}.</h5>
+  		</div>
+			<div class="row">
+			<div class="span3 columns">
+				<h4>My Account</h4> <hr />
+					<a href="{% url "modify_account" %}"><p>Modify Account</p></a>
+					<br />
+				<h4>My Servers</h4> <hr/>
+					<a href="{% url "add_server" %}"><p>Add New Server</p></a>
+					<a href="{% url "display_servers" %}"><p>Display servers</p></a>
+					<a href="{% url "modify_metric" %}"><p>Modify Metric</p></a>
+										
+			</div>
+			
+				<div class="span14">
+  							<h4>Get started </h4>
+  							<hr />
+             				<p>Welcome to your account for Cloud Hosting Companies, {{ Company_name }}.</p>
+             				             				
+ 					  		{% if data %}
+  							{% for item in data %}
+  							<h4>What people said about you</h4>             				
+ 					  		<blockquote class="tsc_teal_blockquotes">
+    							<p>{{ item.message }}</p>
+    							<p> <cite>– <a>{{ item.sender_name }}</a>, {{ item.sender_email }}</cite> </p>
+  							</blockquote>
+  							{% endfor %}
+  							{% endif %}			  
+  				</div>
+  			</div>
+	
+{% endblock %}
+  

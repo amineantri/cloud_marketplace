@@ -1,0 +1,16 @@
+{
+"8d59e4aa-e966-11e2-b95e-7a88c8d43e55":{
+"is_enabled":true,
+"zone_uuid":"938da846-e657-11e2-b403-7a88c8d43e55",
+"vendor":"",
+"description":"",
+"tags":{
+},
+"port_count":24,
+"name":"switch",
+"created_on":"2013-07-10 14:42:24.196102",
+"updated_on":"2013-07-10 14:42:24.196183",
+"model_name":"",
+"uuid":"8d59e4aa-e966-11e2-b95e-7a88c8d43e55"
+}
+}
