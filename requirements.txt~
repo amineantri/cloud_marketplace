@@ -1,0 +1,5 @@
+Django==1.4
+django-cache-machine==0.6
+django-dajaxice==0.2
+django-pagination==1.0.7
+django-sorting==0.1
